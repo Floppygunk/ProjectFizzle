@@ -1,5 +1,12 @@
 package floptower.fizzlecraft;
 
+import floptower.fizzlecraft.generators.WorldGenMercury;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -18,14 +25,8 @@ import floptower.fizzlecraft.items.ItemGemZirconia;
 import floptower.fizzlecraft.items.ItemIngotMagnesium;
 import floptower.fizzlecraft.items.ItemIngotOsmium;
 import floptower.fizzlecraft.items.ItemIngotUranium;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fluids.Fluid;
 
-@Mod(modid = "floptower/fizzlecraft", name = "FizzleCraft", version = "0.0.1a")
+@Mod(modid = "floptower/fizzlecraft", name = "FizzleCraft", version = "0.0.2")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Fizzlecraft {
 
@@ -39,7 +40,8 @@ public class Fizzlecraft {
 	public static final Block oreUranium = new BlockUraniumOre(1202, Material.rock);
 	// Zirconia: Optical properties, hardness is between iron and diamond
 	public static final Block oreZirconia = new BlockZirconiaOre(1203, Material.rock);
-
+	public static final Block torchMagnesium = new BlockMagnesiumTorch(1207);
+	
 	public static final Block liquidMercury = new BlockMercury(1204);
 	
 	public static final Item ingotMagnesium = new ItemIngotMagnesium(12200);
@@ -47,6 +49,7 @@ public class Fizzlecraft {
 	public static final Item ingotOsmium = new ItemIngotOsmium(12202);
 	public static final Item gemZirconia = new ItemGemZirconia(12203);
 
+	
 	@Instance("FizzleCraft")
 	public static Fizzlecraft instance;
 
@@ -64,6 +67,7 @@ public class Fizzlecraft {
 		GameRegistry.registerBlock(oreUranium, "oreUranium");
 		GameRegistry.registerBlock(oreZirconia, "oreZirconia");
 		GameRegistry.registerBlock(liquidMercury, "liquidMercury");
+		GameRegistry.registerBlock(torchMagnesium, "torchMagnesium");
 		
 		LanguageRegistry.addName(oreMagnesium, "Magnesium Ore");
 		LanguageRegistry.addName(oreOsmium, "Osmiridium Ore");
@@ -74,6 +78,7 @@ public class Fizzlecraft {
 		LanguageRegistry.addName(ingotOsmium, "Osmium Ingot");
 		LanguageRegistry.addName(ingotUranium, "Uranium Ingot");
 		LanguageRegistry.addName(gemZirconia, "Zirconia");
+		LanguageRegistry.addName(torchMagnesium, "Magnesium Torch");
 		
 		MinecraftForge.setBlockHarvestLevel(oreMagnesium, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(oreOsmium, "pickaxe", 3);
@@ -87,7 +92,11 @@ public class Fizzlecraft {
 		
 		GameRegistry.registerWorldGenerator(new WorldGenMineable());
         GameRegistry.registerWorldGenerator(new WorldGenMercury());
+        
+        GameRegistry.addRecipe(new ItemStack (torchMagnesium, 2),"x","y",
+        		'x',new ItemStack(ingotMagnesium), 'y',new ItemStack(Item.stick));
 
+		
 		proxy.registerRenderers();
 	}
 
