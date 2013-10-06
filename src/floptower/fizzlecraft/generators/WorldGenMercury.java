@@ -16,7 +16,7 @@ public class WorldGenMercury implements IWorldGenerator {
             generateLake(world, random, chunkX * 16, chunkZ * 16);
         }
 	}
-
+//Floppy_gunk, change the values for mercury spawning its way too common
     private void generateLake(World world, Random random, int i, int j) {
         int radius = random.nextInt(3)+2; // Radius is between 2 and 5 (4x4 and 10x10)
         int centreX = random.nextInt(15 - radius * 2)+radius; // x and z center are inside chunk
