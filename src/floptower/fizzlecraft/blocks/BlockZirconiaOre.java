@@ -16,7 +16,7 @@ public class BlockZirconiaOre extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("oreZirconia");
 		setCreativeTab(CreativeTabs.tabBlock);
-		setTextureName("floptower.fizzlecraft:zirconia_ore");
+		setTextureName("fizzlecraft:zirconia_ore");
 	}
 
 	public int idDropped(int par1, Random random, int zero) {

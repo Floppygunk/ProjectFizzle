@@ -7,7 +7,7 @@ public class ItemIngotOsmium extends Item {
 	public ItemIngotOsmium(int id) {
 		super(id);
 		
-		setTextureName("floptower.fizzlecraft:ingot_osmium");
+		setTextureName("fizzlecraft:ingot_osmium");
 		setCreativeTab(CreativeTabs.tabMaterials);
 		setUnlocalizedName("ingotOsmium");
 	}

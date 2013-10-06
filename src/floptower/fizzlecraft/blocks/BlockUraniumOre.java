@@ -13,7 +13,7 @@ public class BlockUraniumOre extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("oreUranium");
 		setCreativeTab(CreativeTabs.tabBlock);
-		setTextureName("floptower.fizzlecraft:uranium_ore");
+		setTextureName("fizzlecraft:uranium_ore");
 	}
 
 }

@@ -23,8 +23,8 @@ public class BlockMercuryStill extends BlockStationary {
 
 	public void registerIcons(IconRegister iconRegister) {
 		this.theIcon = new Icon[] {
-				iconRegister.registerIcon("floptower.fizzlecraft:mercury_still"),
-				iconRegister.registerIcon("floptower.fizzlecraft:mercury_flowing") };
+				iconRegister.registerIcon("fizzlecraft:mercury_still"),
+				iconRegister.registerIcon("fizzlecraft:mercury_flowing") };
 	}
 	
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {

@@ -7,7 +7,7 @@ public class ItemIngotMagnesium extends Item {
 	public ItemIngotMagnesium(int id) {
 		super(id);
 		
-		setTextureName("floptower.fizzlecraft:ingot_magnesium");
+		setTextureName("fizzlecraft:ingot_magnesium");
 		setCreativeTab(CreativeTabs.tabMaterials);
 		setUnlocalizedName("ingotMagnesium");
 	}

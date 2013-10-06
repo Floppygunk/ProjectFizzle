@@ -13,7 +13,7 @@ public class BlockOsmiumOre extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("oreOsmium");
 		setCreativeTab(CreativeTabs.tabBlock);
-		setTextureName("floptower.fizzlecraft:osmium_ore");
+		setTextureName("fizzlecraft:osmium_ore");
 		
 	}
 

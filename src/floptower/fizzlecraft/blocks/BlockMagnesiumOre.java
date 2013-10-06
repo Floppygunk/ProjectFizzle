@@ -13,7 +13,7 @@ public class BlockMagnesiumOre extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("oreMagnesium");
 		setCreativeTab(CreativeTabs.tabBlock);
-		setTextureName("floptower.fizzlecraft:magnesium_ore");
+		setTextureName("fizzlecraft:magnesium_ore");
 	}
 
 }
