@@ -1,7 +1,5 @@
 package floptower.fizzlecraft.blocks;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFluid;
 import net.minecraft.block.material.Material;
@@ -14,6 +12,8 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class BlockMercuryFlowing extends BlockFluid {
 
@@ -39,6 +39,8 @@ public class BlockMercuryFlowing extends BlockFluid {
 					Potion.poison.getId(), 50));
 		}
 	}
+
+    // The rest of this code is copied from BlockFlowing, with some slight modifications
 
 	/**
 	 * Number of horizontally adjacent liquid source blocks. Diagonal doesn't
