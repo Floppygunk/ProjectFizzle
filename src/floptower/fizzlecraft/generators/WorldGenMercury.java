@@ -12,7 +12,7 @@ public class WorldGenMercury implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		if (world.provider.dimensionId == 0) {
+		if (world.provider.dimensionId == 0 & random.nextInt(5) == 0) { // Mercury appears in 1 in 5 chunks
             generateLake(world, random, chunkX * 16, chunkZ * 16);
         }
 	}
