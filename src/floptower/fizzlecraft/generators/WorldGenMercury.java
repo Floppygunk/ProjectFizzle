@@ -25,7 +25,8 @@ public class WorldGenMercury implements IWorldGenerator {
 
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
-                double dist = Math.sqrt((x-centreX)*(x-centreX)+(z-centreZ)*(z-centreZ)) - radius;
+                // (radius-0.5) decreases the diameter by one block, which makes it look better
+                double dist = Math.sqrt((x-centreX)*(x-centreX)+(z-centreZ)*(z-centreZ)) - radius-0.5;
                 if (dist <= 0) {
                     world.setBlock(x+i, y, z+j, Fizzlecraft.mercuryFlowing.blockID);
                     world.setBlock(x+i, y-1, z+j, Fizzlecraft.mercuryFlowing.blockID);
