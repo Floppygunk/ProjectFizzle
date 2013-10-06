@@ -28,7 +28,7 @@ import floptower.fizzlecraft.items.ItemIngotMagnesium;
 import floptower.fizzlecraft.items.ItemIngotOsmium;
 import floptower.fizzlecraft.items.ItemIngotUranium;
 
-@Mod(modid = "floptower/fizzlecraft", name = "FizzleCraft", version = "0.0.1a")
+@Mod(modid = "floptower/fizzlecraft", name = "PlasmaticCraft", version = "0.0.2")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Fizzlecraft {
 	
