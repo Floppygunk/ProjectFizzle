@@ -1,5 +1,6 @@
 package floptower.fizzlecraft;
 
+import floptower.fizzlecraft.generators.WorldGenMercury;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -89,6 +90,8 @@ public class Fizzlecraft {
 		GameRegistry.addSmelting(oreZirconia.blockID, new ItemStack(gemZirconia, 3), 0.8f);
 		
 		GameRegistry.registerWorldGenerator(new WorldGenMineable());
+        GameRegistry.registerWorldGenerator(new WorldGenMercury());
+
 		
 		proxy.registerRenderers();
 	}
