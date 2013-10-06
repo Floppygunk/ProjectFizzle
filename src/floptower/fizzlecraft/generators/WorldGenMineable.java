@@ -33,6 +33,8 @@ public class WorldGenMineable implements IWorldGenerator {
 		generateVeins(world, random, i, j, Fizzlecraft.oreUranium.blockID, 20, 0, 1, 4);
 		generateVeins(world, random, i, j, Fizzlecraft.oreOsmium.blockID, 30, 0, 1, 3);
 		generateVeins(world, random, i, j, Fizzlecraft.oreZirconia.blockID, 35, 0, 2, 3);
+		generateVeins(world, random, i, j, Fizzlecraft.oreCopper.blockID, 100, 35, 4, 8);
+		generateVeins(world, random, i, j, Fizzlecraft.oreBauxite.blockID, 100, 50, 1, 16);
 	}
 
 	private void generateNether(World world, Random random, int i, int j) {
