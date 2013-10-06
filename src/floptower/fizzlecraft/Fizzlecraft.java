@@ -62,8 +62,6 @@ public class Fizzlecraft {
 
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
-		
-		//Herlllllo
 		GameRegistry.registerBlock(oreMagnesium, "oreMagnesium");
 		GameRegistry.registerBlock(oreOsmium, "oreOsmiridium");
 		GameRegistry.registerBlock(oreUranium, "oreUranium");
