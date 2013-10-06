@@ -1,11 +1,5 @@
 package floptower.fizzlecraft;
 
-import floptower.fizzlecraft.generators.WorldGenMercury;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -16,22 +10,27 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import floptower.fizzlecraft.blocks.BlockMagnesiumOre;
-import floptower.fizzlecraft.blocks.BlockMercuryFlowing;
-import floptower.fizzlecraft.blocks.BlockMercuryStill;
-import floptower.fizzlecraft.blocks.BlockOsmiumOre;
-import floptower.fizzlecraft.blocks.BlockUraniumOre;
-import floptower.fizzlecraft.blocks.BlockZirconiaOre;
+import floptower.fizzlecraft.blocks.*;
+import floptower.fizzlecraft.fluids.FluidMercury;
+import floptower.fizzlecraft.generators.WorldGenMercury;
 import floptower.fizzlecraft.generators.WorldGenMineable;
 import floptower.fizzlecraft.items.ItemGemZirconia;
 import floptower.fizzlecraft.items.ItemIngotMagnesium;
 import floptower.fizzlecraft.items.ItemIngotOsmium;
 import floptower.fizzlecraft.items.ItemIngotUranium;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.Fluid;
 
 @Mod(modid = "floptower/fizzlecraft", name = "FizzleCraft", version = "0.0.1a")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Fizzlecraft {
-	
+
+	public static final Fluid fluidMercury = new FluidMercury();
+
 	// Magnesium: Thermal properties
 	public static final Block oreMagnesium = new BlockMagnesiumOre(1200, Material.rock);
 	// Osmium: Shielding properies, heavy, extremely rare
@@ -40,16 +39,14 @@ public class Fizzlecraft {
 	public static final Block oreUranium = new BlockUraniumOre(1202, Material.rock);
 	// Zirconia: Optical properties, hardness is between iron and diamond
 	public static final Block oreZirconia = new BlockZirconiaOre(1203, Material.rock);
-	
-	public static final Block mercuryStill = new BlockMercuryStill(1205, Material.water);
-	public static final Block mercuryFlowing = new BlockMercuryFlowing(1204, Material.water);
+
+	public static final Block liquidMercury = new BlockMercury(1204);
 	
 	public static final Item ingotMagnesium = new ItemIngotMagnesium(12200);
 	public static final Item ingotUranium = new ItemIngotUranium(12201);
 	public static final Item ingotOsmium = new ItemIngotOsmium(12202);
 	public static final Item gemZirconia = new ItemGemZirconia(12203);
-	
-	
+
 	@Instance("FizzleCraft")
 	public static Fizzlecraft instance;
 
@@ -66,14 +63,13 @@ public class Fizzlecraft {
 		GameRegistry.registerBlock(oreOsmium, "oreOsmiridium");
 		GameRegistry.registerBlock(oreUranium, "oreUranium");
 		GameRegistry.registerBlock(oreZirconia, "oreZirconia");
-		GameRegistry.registerBlock(mercuryStill, "mercuryStill");
-		GameRegistry.registerBlock(mercuryFlowing, "mercuryFlowing");
+		GameRegistry.registerBlock(liquidMercury, "liquidMercury");
 		
 		LanguageRegistry.addName(oreMagnesium, "Magnesium Ore");
 		LanguageRegistry.addName(oreOsmium, "Osmiridium Ore");
 		LanguageRegistry.addName(oreUranium, "Uranium Ore");
 		LanguageRegistry.addName(oreZirconia, "Zirconia Ore");
-		LanguageRegistry.addName(mercuryFlowing, "Mercury");
+		LanguageRegistry.addName(liquidMercury, "Mercury");
 		LanguageRegistry.addName(ingotMagnesium, "Magnesium Ingot");
 		LanguageRegistry.addName(ingotOsmium, "Osmium Ingot");
 		LanguageRegistry.addName(ingotUranium, "Uranium Ingot");
@@ -92,7 +88,6 @@ public class Fizzlecraft {
 		GameRegistry.registerWorldGenerator(new WorldGenMineable());
         GameRegistry.registerWorldGenerator(new WorldGenMercury());
 
-		
 		proxy.registerRenderers();
 	}
 

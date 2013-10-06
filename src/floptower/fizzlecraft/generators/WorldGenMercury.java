@@ -28,8 +28,8 @@ public class WorldGenMercury implements IWorldGenerator {
                 // (radius-0.5) decreases the diameter by one block, which makes it look better
                 double dist = Math.sqrt((x-centreX)*(x-centreX)+(z-centreZ)*(z-centreZ)) - radius-0.5;
                 if (dist <= 0) {
-                    world.setBlock(x+i, y, z+j, Fizzlecraft.mercuryFlowing.blockID);
-                    world.setBlock(x+i, y-1, z+j, Fizzlecraft.mercuryFlowing.blockID);
+                    world.setBlock(x+i, y, z+j, Fizzlecraft.liquidMercury.blockID);
+                    world.setBlock(x+i, y-1, z+j, Fizzlecraft.liquidMercury.blockID);
                     world.setBlock(x+i, y-2, z+j, Block.stone.blockID);
                 } else if (dist <= 1) {
                     world.setBlock(x+i, y, z+j, Block.stone.blockID);
