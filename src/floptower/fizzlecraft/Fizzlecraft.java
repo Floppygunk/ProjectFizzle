@@ -17,6 +17,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import floptower.fizzlecraft.blocks.BlockMagnesiumOre;
+import floptower.fizzlecraft.blocks.BlockMagnesiumTorch;
 import floptower.fizzlecraft.blocks.BlockMercuryFlowing;
 import floptower.fizzlecraft.blocks.BlockMercuryStill;
 import floptower.fizzlecraft.blocks.BlockOsmiumOre;
@@ -43,6 +44,8 @@ public class Fizzlecraft {
 	
 	public static final Block mercuryStill = new BlockMercuryStill(1205, Material.water);
 	public static final Block mercuryFlowing = new BlockMercuryFlowing(1204, Material.water);
+	public static final Block torchMagnesium = new BlockMagnesiumTorch(1207);
+	
 	
 	public static final Item ingotMagnesium = new ItemIngotMagnesium(12200);
 	public static final Item ingotUranium = new ItemIngotUranium(12201);
@@ -68,6 +71,8 @@ public class Fizzlecraft {
 		GameRegistry.registerBlock(oreZirconia, "oreZirconia");
 		GameRegistry.registerBlock(mercuryStill, "mercuryStill");
 		GameRegistry.registerBlock(mercuryFlowing, "mercuryFlowing");
+		GameRegistry.registerBlock(torchMagnesium, "torchMagnesium");
+		
 		
 		LanguageRegistry.addName(oreMagnesium, "Magnesium Ore");
 		LanguageRegistry.addName(oreOsmium, "Osmiridium Ore");
@@ -78,6 +83,7 @@ public class Fizzlecraft {
 		LanguageRegistry.addName(ingotOsmium, "Osmium Ingot");
 		LanguageRegistry.addName(ingotUranium, "Uranium Ingot");
 		LanguageRegistry.addName(gemZirconia, "Zirconia");
+		LanguageRegistry.addName(torchMagnesium, "Magnesium Torch");
 		
 		MinecraftForge.setBlockHarvestLevel(oreMagnesium, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(oreOsmium, "pickaxe", 3);
@@ -91,6 +97,9 @@ public class Fizzlecraft {
 		
 		GameRegistry.registerWorldGenerator(new WorldGenMineable());
         GameRegistry.registerWorldGenerator(new WorldGenMercury());
+        
+        GameRegistry.addRecipe(new ItemStack (torchMagnesium, 2),"x","y",
+        		'x',new ItemStack(ingotMagnesium), 'y',new ItemStack(Item.stick));
 
 		
 		proxy.registerRenderers();
