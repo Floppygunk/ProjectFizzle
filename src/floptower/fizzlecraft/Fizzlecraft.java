@@ -14,6 +14,7 @@ import floptower.fizzlecraft.blocks.*;
 import floptower.fizzlecraft.fluids.FluidMercury;
 import floptower.fizzlecraft.generators.WorldGenMercury;
 import floptower.fizzlecraft.generators.WorldGenMineable;
+import floptower.fizzlecraft.handler.BucketHandler;
 import floptower.fizzlecraft.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -21,6 +22,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidRegistry;
 
 @Mod(modid = "floptower/fizzlecraft", name = "PlasmaticCraft", version = "0.0.3")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -47,6 +50,7 @@ public class Fizzlecraft {
 	public static final Item ingotOsmium = new ItemIngotOsmium(12202);
 	public static final Item ingotCopper = new ItemIngotCopper(12203);
 	public static final Item gemZirconia = new ItemGemZirconia(12204);
+	public static final Item bucketMercury = new ItemBucketMercury(12205);
 	
 	
 	@Instance("FizzleCraft")
@@ -94,6 +98,7 @@ public class Fizzlecraft {
 		LanguageRegistry.addName(blockCopper, "Block of Copper");
 		LanguageRegistry.addName(oreCopper, "Copper Ore");
 		LanguageRegistry.addName(oreBauxite, "Bauxite Ore");
+		LanguageRegistry.addName(bucketMercury, "Mercury Bucket");
 		
 		MinecraftForge.setBlockHarvestLevel(oreMagnesium, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(oreOsmium, "pickaxe", 3);
@@ -140,9 +145,11 @@ public class Fizzlecraft {
         GameRegistry.addShapelessRecipe(new ItemStack(blockCopper),ingotCopperStack,ingotCopperStack,
         		ingotCopperStack,ingotCopperStack,ingotCopperStack,ingotCopperStack,
         		ingotCopperStack,ingotCopperStack,ingotCopperStack);
-        
 
-		
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("mercury", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(bucketMercury), new ItemStack(Item.bucketEmpty));
+
+		MinecraftForge.EVENT_BUS.register(new BucketHandler());
+
 		proxy.registerRenderers();
 	}
 

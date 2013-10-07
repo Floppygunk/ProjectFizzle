@@ -5,7 +5,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 public class FluidMercury extends Fluid {
 	public FluidMercury() {
-		super("fluidMercury");
+		super("mercury");
 
 		setDensity(20);
 		setViscosity(500);
