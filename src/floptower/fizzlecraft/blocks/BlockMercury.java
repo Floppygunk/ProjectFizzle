@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.Icon;
@@ -28,11 +29,14 @@ public class BlockMercury extends BlockFluidClassic {
 
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
 										  Entity entity) {
-		entity.motionY += 0.03;
 		if (entity instanceof EntityLivingBase) {
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(
 					Potion.poison.getId(), 50));
 		}
+		if (entity instanceof EntityPlayer && ((EntityPlayer) entity).isSneaking()) {
+			return;
+		}
+		entity.motionY += 0.03;
 	}
 
 	@SideOnly(Side.CLIENT)
