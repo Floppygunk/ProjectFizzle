@@ -12,6 +12,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import floptower.fizzlecraft.blocks.*;
 import floptower.fizzlecraft.fluids.FluidMercury;
+import floptower.fizzlecraft.fluids.FluidPlasma;
 import floptower.fizzlecraft.generators.WorldGenMercury;
 import floptower.fizzlecraft.generators.WorldGenMineable;
 import floptower.fizzlecraft.items.*;
@@ -27,6 +28,7 @@ import net.minecraftforge.fluids.Fluid;
 public class Fizzlecraft {
 
 	public static final Fluid fluidMercury = new FluidMercury();
+	public static final Fluid fluidPlasma = new FluidPlasma();
 
 	public static final Block oreMagnesium = new BlockMagnesiumOre(1200, Material.rock);
 	public static final Block oreOsmium = new BlockOsmiumOre(1201, Material.rock);
@@ -41,6 +43,7 @@ public class Fizzlecraft {
 	public static final Block blockMagnesium = new BlockMagnesiumBlock(1210, Material.rock);
 	public static final Block blockCopper = new BlockCopperBlock(1211, Material.rock);
 	public static final Block liquidMercury = new BlockMercury(1212);
+	public static final Block liquidPlasma = new BlockPlasma(1213);
 	
 	public static final Item ingotMagnesium = new ItemIngotMagnesium(12200);
 	public static final Item ingotUranium = new ItemIngotUranium(12201);
@@ -66,6 +69,7 @@ public class Fizzlecraft {
 		GameRegistry.registerBlock(oreUranium, "oreUranium");
 		GameRegistry.registerBlock(oreZirconia, "oreZirconia");
 		GameRegistry.registerBlock(liquidMercury, "liquidMercury");
+		GameRegistry.registerBlock(liquidPlasma, "liquidPlasma");
 		GameRegistry.registerBlock(torchMagnesium, "torchMagnesium");
 		GameRegistry.registerBlock(blockZirconia, "blockZirconia");
 		GameRegistry.registerBlock(blockUranium, "blockUranium");
@@ -81,6 +85,7 @@ public class Fizzlecraft {
 		LanguageRegistry.addName(oreUranium, "Uranium Ore");
 		LanguageRegistry.addName(oreZirconia, "Zirconia Ore");
 		LanguageRegistry.addName(liquidMercury, "Mercury");
+		LanguageRegistry.addName(liquidPlasma, "Plasma");
 		LanguageRegistry.addName(ingotMagnesium, "Magnesium Ingot");
 		LanguageRegistry.addName(ingotOsmium, "Osmium Ingot");
 		LanguageRegistry.addName(ingotUranium, "Uranium Ingot");

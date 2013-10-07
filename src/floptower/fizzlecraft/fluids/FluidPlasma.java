@@ -3,12 +3,12 @@ package floptower.fizzlecraft.fluids;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class FluidMercury extends Fluid {
-	public FluidMercury() {
-		super("fluidMercury");
+public class FluidPlasma extends Fluid {
+	public FluidPlasma() {
+		super("fluidPlasma");
 
-		setDensity(20);
-		setViscosity(2);
+		setDensity(-1);
+		setViscosity(5000);
 
 		// Required
 		FluidRegistry.registerFluid(this);
