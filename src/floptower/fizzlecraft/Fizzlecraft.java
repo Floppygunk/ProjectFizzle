@@ -22,7 +22,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 
-@Mod(modid = "floptower/fizzlecraft", name = "FizzleCraft", version = "0.0.2")
+@Mod(modid = "floptower/fizzlecraft", name = "PlasmaticCraft", version = "0.0.3")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class Fizzlecraft {
 
@@ -32,22 +32,21 @@ public class Fizzlecraft {
 	public static final Block oreOsmium = new BlockOsmiumOre(1201, Material.rock);
 	public static final Block oreUranium = new BlockUraniumOre(1202, Material.rock);
 	public static final Block oreZirconia = new BlockZirconiaOre(1203, Material.rock);
-	public static final Block torchMagnesium = new BlockMagnesiumTorch(1207);
-	public static final Block blockZirconia = new BlockZirconiaBlock(1208, Material.rock);
-	public static final Block blockUranium = new BlockUraniumBlock(1209, Material.rock);
-	public static final Block blockOsmium = new BlockOsmiumBlock(1210, Material.rock);
-	public static final Block blockMagnesium = new BlockMagnesiumBlock(1211, Material.rock);
-	public static final Block oreCopper = new BlockCopperOre(1212, Material.rock);
-	public static final Block oreBauxite = new BlockBauxiteOre(1213, Material.rock);
-	public static final Block blockCopper = new BlockCopperBlock(1214, Material.rock);
-	
-	public static final Block liquidMercury = new BlockMercury(1204);
+	public static final Block oreCopper = new BlockCopperOre(1204, Material.rock);
+	public static final Block oreBauxite = new BlockBauxiteOre(1205, Material.rock);
+	public static final Block torchMagnesium = new BlockMagnesiumTorch(1206);
+	public static final Block blockZirconia = new BlockZirconiaBlock(1207, Material.rock);
+	public static final Block blockUranium = new BlockUraniumBlock(1208, Material.rock);
+	public static final Block blockOsmium = new BlockOsmiumBlock(1209, Material.rock);
+	public static final Block blockMagnesium = new BlockMagnesiumBlock(1210, Material.rock);
+	public static final Block blockCopper = new BlockCopperBlock(1211, Material.rock);
+	public static final Block liquidMercury = new BlockMercury(1212);
 	
 	public static final Item ingotMagnesium = new ItemIngotMagnesium(12200);
 	public static final Item ingotUranium = new ItemIngotUranium(12201);
 	public static final Item ingotOsmium = new ItemIngotOsmium(12202);
-	public static final Item gemZirconia = new ItemGemZirconia(12203);
-	public static final Item ingotCopper = new ItemIngotCopper(12204);
+	public static final Item ingotCopper = new ItemIngotCopper(12203);
+	public static final Item gemZirconia = new ItemGemZirconia(12204);
 	
 	
 	@Instance("FizzleCraft")
