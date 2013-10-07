@@ -8,7 +8,7 @@ public class FluidMercury extends Fluid {
 		super("mercury");
 
 		setDensity(20);
-		setViscosity(500);
+		setViscosity(2);
 
 		// Required
 		FluidRegistry.registerFluid(this);
