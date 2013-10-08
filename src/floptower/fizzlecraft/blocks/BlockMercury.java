@@ -5,7 +5,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 import floptower.fizzlecraft.Fizzlecraft;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,7 +23,6 @@ public class BlockMercury extends BlockFluidClassic {
 		Fizzlecraft.fluidMercury.setBlockID(id);
 
 		setUnlocalizedName("mercury");
-		setCreativeTab(CreativeTabs.tabMisc);
 	}
 
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
