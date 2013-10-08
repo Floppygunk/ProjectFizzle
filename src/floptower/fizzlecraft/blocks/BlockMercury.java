@@ -31,8 +31,11 @@ public class BlockMercury extends BlockFluidClassic {
 			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(
 					Potion.poison.getId(), 50));
 		}
-		if (entity instanceof EntityPlayer && ((EntityPlayer) entity).isSneaking()) {
-			return;
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer)entity;
+			if (player.capabilities.isCreativeMode && player.isSneaking()) {
+				return;
+			}
 		}
 		entity.motionY += 0.03;
 	}
