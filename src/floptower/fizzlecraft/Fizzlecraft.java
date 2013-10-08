@@ -121,30 +121,18 @@ public class Fizzlecraft {
 		GameRegistry.registerWorldGenerator(new WorldGenMineable());
         GameRegistry.registerWorldGenerator(new WorldGenMercury());
         
-        GameRegistry.addRecipe(new ItemStack (torchMagnesium, 2),"x","y",
-        		'x',new ItemStack(ingotMagnesium), 'y',new ItemStack(Item.stick));
-        
-        ItemStack ingotUraniumStack =  new ItemStack(ingotUranium);
-        ItemStack ingotMagnesiumStack =  new ItemStack(ingotMagnesium);
-        ItemStack gemZirconiaStack =  new ItemStack(gemZirconia);
-        ItemStack ingotOsmiumStack =  new ItemStack(ingotOsmium);
-        ItemStack ingotCopperStack =  new ItemStack(ingotCopper);
-        
-        GameRegistry.addShapelessRecipe(new ItemStack(blockUranium), ingotUraniumStack,ingotUraniumStack,
-        		ingotUraniumStack,ingotUraniumStack,ingotUraniumStack,ingotUraniumStack,
-        		ingotUraniumStack,ingotUraniumStack,ingotUraniumStack);
-        GameRegistry.addShapelessRecipe(new ItemStack(blockMagnesium), ingotMagnesiumStack,ingotMagnesiumStack,
-        		ingotMagnesiumStack,ingotMagnesiumStack,ingotMagnesiumStack,ingotMagnesiumStack,
-        		ingotMagnesiumStack,ingotMagnesiumStack,ingotMagnesiumStack);
-        GameRegistry.addShapelessRecipe(new ItemStack(blockOsmium), ingotOsmiumStack,ingotOsmiumStack,
-        		ingotOsmiumStack,ingotOsmiumStack,ingotOsmiumStack,ingotOsmiumStack,
-        		ingotOsmiumStack,ingotOsmiumStack,ingotOsmiumStack);
-        GameRegistry.addShapelessRecipe(new ItemStack(blockOsmium), gemZirconiaStack,gemZirconiaStack,
-        		gemZirconiaStack,gemZirconiaStack,gemZirconiaStack,gemZirconiaStack,
-        		gemZirconiaStack,gemZirconiaStack,gemZirconiaStack);
-        GameRegistry.addShapelessRecipe(new ItemStack(blockCopper),ingotCopperStack,ingotCopperStack,
-        		ingotCopperStack,ingotCopperStack,ingotCopperStack,ingotCopperStack,
-        		ingotCopperStack,ingotCopperStack,ingotCopperStack);
+        GameRegistry.addRecipe(new ItemStack(torchMagnesium, 2),"x","y",'x',new ItemStack(ingotMagnesium), 'y',new ItemStack(Item.stick));
+		GameRegistry.addRecipe(new ItemStack(blockMagnesium),"ooo","ooo","ooo",'o',new ItemStack(ingotMagnesium));
+		GameRegistry.addRecipe(new ItemStack(blockUranium),"ooo","ooo","ooo",'o',new ItemStack(ingotUranium));
+		GameRegistry.addRecipe(new ItemStack(blockCopper),"ooo","ooo","ooo",'o',new ItemStack(ingotCopper));
+		GameRegistry.addRecipe(new ItemStack(blockZirconia),"ooo","ooo","ooo",'o',new ItemStack(gemZirconia));
+		GameRegistry.addRecipe(new ItemStack(blockOsmium),"oo","oo",'o',new ItemStack(ingotOsmium));
+
+		GameRegistry.addShapelessRecipe(new ItemStack(ingotMagnesium, 9), new ItemStack(blockMagnesium));
+		GameRegistry.addShapelessRecipe(new ItemStack(ingotUranium, 9), new ItemStack(blockUranium));
+		GameRegistry.addShapelessRecipe(new ItemStack(ingotCopper, 9), new ItemStack(blockCopper));
+		GameRegistry.addShapelessRecipe(new ItemStack(gemZirconia, 9), new ItemStack(blockZirconia));
+		GameRegistry.addShapelessRecipe(new ItemStack(ingotOsmium, 4), new ItemStack(blockOsmium));
 
 		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("mercury", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(bucketMercury), new ItemStack(Item.bucketEmpty));
 
