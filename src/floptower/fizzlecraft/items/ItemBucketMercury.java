@@ -9,9 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.Event;
-import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fluids.ItemFluidContainer;
 
 
@@ -31,7 +28,7 @@ public class ItemBucketMercury extends ItemFluidContainer {
 		if (movingobjectposition == null) {
 			return item;
 		} else {
-			FillBucketEvent event = new FillBucketEvent(player, item, world, movingobjectposition);
+			/*FillBucketEvent event = new FillBucketEvent(player, item, world, movingobjectposition);
 			if (MinecraftForge.EVENT_BUS.post(event)) {
 				return item;
 			}
@@ -50,7 +47,7 @@ public class ItemBucketMercury extends ItemFluidContainer {
 				}
 
 				return item;
-			}
+			}*/
 
 			if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE) {
 				int x = movingobjectposition.blockX;
@@ -89,14 +86,12 @@ public class ItemBucketMercury extends ItemFluidContainer {
 
 		if (!par1World.isAirBlock(par2, par3, par4) && !flag) {
 			return false;
-		} else {
-
-			if (!par1World.isRemote && flag && !material.isLiquid()) {
-				par1World.destroyBlock(par2, par3, par4, true);
-			}
-			par1World.setBlock(par2, par3, par4, Fizzlecraft.liquidMercury.blockID, 0, 3);
-
-			return true;
 		}
+
+		if (!par1World.isRemote && flag && !material.isLiquid()) {
+			par1World.destroyBlock(par2, par3, par4, true);
+		}
+		par1World.setBlock(par2, par3, par4, Fizzlecraft.liquidMercury.blockID, 0, 3);
+		return true;
 	}
 }
